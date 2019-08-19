@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+       <title>Sueldo Empleado</title>
+    </h:head>
+    <h:body>
+        <h2>Formulario de Empleado</h2>
+        <h:form>
+            <h:panelGrid columns="3">
+
+                <h:outputLabel for="txtNombre" value="Nombre: "/>
+                <h:inputText id="txtNombre" label="Ingrese el Nombre"  required="true" value="#{mbeanEmpleado.nombre}" /> 
+                <h:message for="txtNombre"/> 
+
+                <h:outputLabel for="txtApellido" value="Apellido: "/>
+                <h:inputText id="txtApellido" label="Ingrese el Apellido"  required="true" value="" />
+                <h:message for="txtApellido"/>
+              
+                <h:outputLabel for="txSalarioDia" value="Salario por dia trabajado: "/>
+                <h:inputText id="txtSalarioDia" label="Salario por dia trabajado: "  required="true" value="#{mbeanEmpleado.salarioDia}" /> 
+                <h:message for="txtSalario Dia"/>
+                
+                <h:outputLabel for="txtDiasTrabajados" value="DiasTrabajados: "/>
+                <h:inputText id="txtDiasTrabajados" label="Ingrese Dias trabajados: "  required="true" value="#{mbeanEmpleado.diasTrabajados}" /> 
+                <h:message for="txtDias Trabajados"/>
+                
+                <h:outputLabel for="txSueldoTotal" value="Sueldo Total: "/>
+                <h:inputText id="SueldoTotal" label="sueldo total: "  required="true" value="#{mbeanEmpleado.sueldoTotal}" /> 
+                <h:message for="txtSueldoTotal"/>
+                
+                <h:outputLabel for="radioSexo" value="Sexo"/>
+                <h:selectOneRadio id="radioSexo" value="#{mbeanEmpleado.sexo}">
+                    <f:selectItem itemLabel="Masculino" itemValue="M" />
+                    <f:selectItem itemLabel="Femenino" itemValue="F"/>
+                </h:selectOneRadio>
+                <h:message for="radioSexo"/>
+
+                <h:outputLabel for="cmbCiudad" value="Ciudad: "/>
+                <h:selectOneMenu id="cmbCiudad" label="Ciudad" value="#{mbeanEmpleado.ciudad}">
+                    <f:selectItem itemLabel="Bogota" itemValue="Bogota"/>
+                    <f:selectItem itemLabel="Facatativa" itemValue="Facatativa"/>
+                    <f:selectItem itemLabel="Medellin" itemValue="Medellin"/>
+                </h:selectOneMenu>
+                <h:message for="cmbCiudad"/>
+
+                <h:outputLabel for="chkIdiomas" value="Idiomas Aprendidos"/>
+                <h:selectManyCheckbox id="chkIdiomas" label="chkIdiomas" value="#{mbeanEmpleado.idiomas}">
+                    <f:selectItem itemLabel="Español" itemValue="Español"/>
+                    <f:selectItem itemLabel="Ingles" itemValue="Ingles"/>
+                    <f:selectItem itemLabel="Frances" itemValue="Frances"/>
+                    <f:selectItem itemLabel="Mandarin" itemValue="Mandarin"/>
+                    
+                </h:selectManyCheckbox>
+                <h:message for="chkIdiomas"/>
+
+                <h:commandButton action="recibir" value="Enviar datos"/>
+
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

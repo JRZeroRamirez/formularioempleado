@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+           <title>Datos recibidos</title>
+    </h:head>
+    <h:body>
+        <h2>Datos recibidos y procesados</h2>
+        
+
+            <h:outputLabel for="txtNombreCompleto" value="Nombre Completo: "/>
+            <h:outputLabel id="txtNombreCompleto" value="#{mbeanEmpleado.nombre} #{mbeanEmpleado.apellido}"/>
+
+            <h:outputLabel for="txtSexo" value="Sexo: "/>
+            <h:outputLabel id="txtSexo" value="#{mbeanEmpleado.sexo}"/> 
+            
+            <h:outputLabel for="txtSalarioDia" value="Salario por dia trabajado: "/>
+            <h:outputLabel id="txtSalarioDia" value="#{mbeanEmpleado.salarioDia}"/>
+            
+            <h:outputLabel for="txtDiasTrabajados" value="Dias trabajados: "/>
+            <h:outputLabel id="txtDiasTrabajados" value="#{mbeanEmpleado.diasTrabajados}"/>
+
+             <h:outputLabel for="txtSueldoTotal" value="Sueldo Total: "/>
+             <h:outputLabel id="txtSueldoTotal" value="#{mbeanEmpleado.sueldoTotal}"/>
+            
+            <h:outputLabel for="txtCiudad" value="Ciudad: "/>
+            <h:outputLabel id="txtCiudad" value="#{mbeanEmpleado.ciudad}"/> 
+
+            <h:outputLabel value="idiomas Aprendidos: "/>
+            <h:dataTable value="#{mbeanEmpleado.idiomas}" var="item">
+                <h:column>
+                    <h:outputLabel value="#{item}"/>
+                </h:column>
+            </h:dataTable>
+
+          
+    </h:body>
+</html>
+
